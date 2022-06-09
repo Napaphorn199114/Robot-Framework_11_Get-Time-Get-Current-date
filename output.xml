@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220607 13:28:07.709" rpa="false" schemaversion="3">
+<suite id="s1" name="Get Date" source="D:\Advance_Robot_Python\Robot Framework_11_Get Time&amp;Get Current date\get_date.robot">
+<test id="s1-t1" name="Get Time" line="6">
+<kw name="Get Time" library="BuiltIn">
+<var>${year}</var>
+<var>${month}</var>
+<var>${day}</var>
+<var>${hour}</var>
+<var>${minute}</var>
+<var>${second}</var>
+<arg>year month day hour minute second</arg>
+<doc>Returns the given time in the requested format.</doc>
+<msg timestamp="20220607 13:28:08.000" level="INFO">${year} = 2022</msg>
+<msg timestamp="20220607 13:28:08.000" level="INFO">${month} = 06</msg>
+<msg timestamp="20220607 13:28:08.000" level="INFO">${day} = 07</msg>
+<msg timestamp="20220607 13:28:08.000" level="INFO">${hour} = 13</msg>
+<msg timestamp="20220607 13:28:08.000" level="INFO">${minute} = 28</msg>
+<msg timestamp="20220607 13:28:08.000" level="INFO">${second} = 08</msg>
+<status status="PASS" starttime="20220607 13:28:07.999" endtime="20220607 13:28:08.000"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${year}</var>
+<arg>${year}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20220607 13:28:08.001" level="INFO">${year} = 2022</msg>
+<status status="PASS" starttime="20220607 13:28:08.000" endtime="20220607 13:28:08.001"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${date_time}</var>
+<arg>${year-10}-${month}-${day}</arg>
+<arg>${hour}:${minute}:${second}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220607 13:28:08.002" level="INFO">${date_time} = ['2012-06-07', '13:28:08']</msg>
+<status status="PASS" starttime="20220607 13:28:08.001" endtime="20220607 13:28:08.002"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${date_time}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220607 13:28:08.002" endtime="20220607 13:28:08.003"/>
+</kw>
+<status status="PASS" starttime="20220607 13:28:07.999" endtime="20220607 13:28:08.003"/>
+</test>
+<test id="s1-t2" name="Get Current Date UTC" line="12">
+<kw name="Get Current Date" library="DateTime">
+<var>${date}</var>
+<arg>UTC</arg>
+<arg>exclude_millis=yes</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20220607 13:28:08.005" level="INFO">${date} = 2022-06-07 06:28:08</msg>
+<status status="PASS" starttime="20220607 13:28:08.004" endtime="20220607 13:28:08.005"/>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<var>${plus14}</var>
+<arg>${date}</arg>
+<arg>14 days</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<msg timestamp="20220607 13:28:08.008" level="INFO">${plus14} = 2022-06-21 06:28:08.000</msg>
+<status status="PASS" starttime="20220607 13:28:08.005" endtime="20220607 13:28:08.008"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${future}</var>
+<arg>${plus14}</arg>
+<arg>result_format=%a %B %d %H:%M:%S UTC %Y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20220607 13:28:08.008" level="INFO">${future} = Tue June 21 06:28:08 UTC 2022</msg>
+<status status="PASS" starttime="20220607 13:28:08.008" endtime="20220607 13:28:08.008"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${future}</arg>
+<arg>console=yes</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220607 13:28:08.009" level="INFO">Tue June 21 06:28:08 UTC 2022</msg>
+<status status="PASS" starttime="20220607 13:28:08.009" endtime="20220607 13:28:08.009"/>
+</kw>
+<status status="PASS" starttime="20220607 13:28:08.004" endtime="20220607 13:28:08.010"/>
+</test>
+<status status="PASS" starttime="20220607 13:28:07.711" endtime="20220607 13:28:08.011"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Get Date">Get Date</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
